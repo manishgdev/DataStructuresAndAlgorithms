@@ -83,5 +83,39 @@ In above code
 </ul>
 In the provided example, we're clearing the 2nd bit (indexing starts from 0) in the number 21. The result will be 17 because the binary representation of 21 is `10101`, and after clearing the 2nd bit, it becomes `10001`, which is equivalent to 17 in decimal.
 
+### Swap two numbers
+<ul>
+    <li>Using temp variable</li>
+    <li>a = a+b, b = a - b, a = a -b</li>
+    <li>usnig xor operator</li>
+</ul>
+#### Using XOR (`^`) operator
+```python
+def swap_numbers(a, b):
+    print("Before swapping:")
+    print("a =", a)
+    print("b =", b)
+    
+    # Perform swapping using XOR operator
+    a = a ^ b
+    b = a ^ b
+    a = a ^ b
+    
+    print("\nAfter swapping:")
+    print("a =", a)
+    print("b =", b)
+
+# Example usage:
+a = 5
+b = 9
+swap_numbers(a, b)
+```
+
+<ol>
+<li>a=a^b</li>
+<li>b=a^b => (a^b)^b => a</li>
+<li>a=a^b => (a^b)^a => b</li>
+</ol>
+
 
 
