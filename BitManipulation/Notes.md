@@ -90,6 +90,7 @@ In the provided example, we're clearing the 2nd bit (indexing starts from 0) in 
     <li>usnig xor operator</li>
 </ul>
 #### Using XOR (`^`) operator
+
 ```python
 def swap_numbers(a, b):
     print("Before swapping:")
