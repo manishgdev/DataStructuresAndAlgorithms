@@ -1,5 +1,5 @@
-## Bit Manipulation
-### Check if nth Bit is set in a given number X or not
+# Bit Manipulation
+## Check if nth Bit is set in a given number X or not
 #### 1. X & (1 << n) > 0
 ```python
 def is_nth_bit_set(num, n):
@@ -32,7 +32,7 @@ n = 4
 print("Is the", n, "th bit set in", num, "?", is_nth_bit_set(num, n))
 ```
 
-### Setting the nth bit in a number
+## Setting the nth bit in a number
 #### Use bitwise OR (`|`) operator
 
 ```python
@@ -56,7 +56,7 @@ In above code
 The result is returned.
 In the provided example, we're setting the 2nd bit (indexing starts from 0) in the number 17. The result will be 21 because the binary representation of 17 is 10001, and after setting the 2nd bit, it becomes 10101, which is equivalent to 21 in decimal.
 
-### Clearing the nth bit in a number
+## Clearing the nth bit in a number
 ### Using bitwise AND (`&`) and NOT (`~`)
 
 ```python
@@ -83,7 +83,7 @@ In above code
 </ul>
 In the provided example, we're clearing the 2nd bit (indexing starts from 0) in the number 21. The result will be 17 because the binary representation of 21 is `10101`, and after clearing the 2nd bit, it becomes `10001`, which is equivalent to 17 in decimal.
 
-### Swap two numbers
+## Swap two numbers
 <ul>
     <li>Using temp variable</li>
     <li>a = a+b, b = a - b, a = a -b</li>
