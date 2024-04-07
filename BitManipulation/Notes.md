@@ -83,6 +83,27 @@ In above code
 </ul>
 In the provided example, we're clearing the 2nd bit (indexing starts from 0) in the number 21. The result will be 17 because the binary representation of 21 is `10101`, and after clearing the 2nd bit, it becomes `10001`, which is equivalent to 17 in decimal.
 
+## Clearing right most set bit in a number
+### n & (n-1)
+Example : Let's take 24, Binary of 24 is `110001` and binary of 23 (n-1) is `10111`, so 24 `&` 23 = 16 (`10000`)
+```
+def clear_rightmost_set_bit(num):
+    # To clear the rightmost set bit, subtract 1 from the number and perform bitwise AND with the original number
+    return num & (num - 1)
+
+# Example usage:
+num = 23  # Binary representation: 10111
+result = clear_rightmost_set_bit(num)
+print("Number after clearing the rightmost set bit:", result)
+```
+
+<ul>
+<li>The function clear_rightmost_set_bit takes a number num as input.</li>
+<li>Inside the function, we subtract 1 from the number, which effectively turns off the rightmost set bit and all bits to its right.</li>
+<li>We then perform a bitwise AND operation between the original number and the result of num - 1, which effectively clears the rightmost set bit in the original number.</li>
+<li>The resulting number is returned.</li>
+</ul>
+
 ## Swap two numbers
 <ul>
     <li>Using temp variable</li>
@@ -118,5 +139,44 @@ swap_numbers(a, b)
 <li>a=a^b => (a^b)^a => b</li>
 </ol>
 
+## Count Number of set bits in a number
+<ol>
+    <li>Divide the number by 2 recursively and store the quotient in a string and keep diving the remainders until the number is divisible by zero or remainder is 1</li>
+    <li>Repeatedly right-shifting the number and checking the least significant bit (LSB) until the number becomes zero</li>
+    <li>Repeatedly clearing the rightmost set bit, number of iterations taken to make number zero will be number of set bits</li>
+</ol>
 
+### Using Right Shift Operator
+```
+def count_set_bits(num):
+    count = 0
+    while num:
+        # Increment count if LSB is set
+        count += num & 1
+        # Right shift the number to check the next bit
+        num >>= 1
+    return count
+
+# Example usage:
+num = 23  # Binary representation: 10111
+print("Number of set bits in", num, ":", count_set_bits(num))
+
+```
+
+### Repeatedly flipping the rightmost set bit to zero
+```
+def count_set_bits(num):
+    count = 0
+    while num:
+        # Flip the rightmost set bit to zero
+        num &= (num - 1)
+        # Increment the count
+        count += 1
+    return count
+
+# Example usage:
+num = 23  # Binary representation: 10111
+print("Number of set bits in", num, ":", count_set_bits(num))
+
+```
 
