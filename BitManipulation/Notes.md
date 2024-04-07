@@ -83,6 +83,26 @@ In above code
 </ul>
 In the provided example, we're clearing the 2nd bit (indexing starts from 0) in the number 21. The result will be 17 because the binary representation of 21 is `10101`, and after clearing the 2nd bit, it becomes `10001`, which is equivalent to 17 in decimal.
 
+## Toggle the ith bit in number
+**Using XOR (`^`) operator**
+```python
+def toggle_ith_bit(num, i):
+    # Create a mask with only the ith bit set
+    mask = 1 << i
+    # Perform bitwise XOR with the mask
+    result = num ^ mask
+    return result
+
+# Example usage:
+num = 12  # Binary representation: 1100
+i = 2
+new_num = toggle_ith_bit(num, i)
+print("Number after toggling the", i, "th bit:", new_num)
+
+```
+In the provided example, we're toggling the 2nd bit (indexing starts from 0) in the number 12, which has a binary representation of `1100`. After toggling the 2nd bit, the resulting number will be `8`, which corresponds to the binary representation `1000`.
+
+
 ## Clearing right most set bit in a number
 ### n & (n-1)
 Example : Let's take 24, Binary of 24 is `110001` and binary of 23 (n-1) is `10111`, so 24 `&` 23 = 16 (`10000`)
