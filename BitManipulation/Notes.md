@@ -147,7 +147,7 @@ swap_numbers(a, b)
 </ol>
 
 ### Using Right Shift Operator
-```
+```python
 def count_set_bits(num):
     count = 0
     while num:
@@ -164,7 +164,7 @@ print("Number of set bits in", num, ":", count_set_bits(num))
 ```
 
 ### Repeatedly flipping the rightmost set bit to zero
-```
+```python
 def count_set_bits(num):
     count = 0
     while num:
@@ -179,4 +179,20 @@ num = 23  # Binary representation: 10111
 print("Number of set bits in", num, ":", count_set_bits(num))
 
 ```
+
+## Check if number is power of two
+**`(num & (num - 1)) == 0`**
+
+```python
+def is_power_of_two(num):
+    # A number is a power of 2 if and only if it has only one bit set
+    # So, we can check if num & (num - 1) is equal to 0
+    return num != 0 and (num & (num - 1)) == 0
+
+# Example usage:
+num = 16
+print("Is", num, "a power of 2?", is_power_of_two(num))
+
+```
+
 
